@@ -5,8 +5,8 @@
             this.$el =$(this.el)
         },
         template:`
-        <div class="bg-bar">
-            <h2>新建歌曲</h2>
+        <div class="bg-bar" id="fromBar">
+
             <form class="form">        
                 <div class="row">
                     <label>歌曲名</label>
@@ -33,6 +33,13 @@
                 html = html.replace(`__${string}__`,data[string] || '')
             })
             $(this.el).html(html)
+            let fromBar = $('.page > main > #fromBar')
+            if(data.id){
+                $(fromBar).prepend('<h2>编辑歌曲<h2/>')
+            }
+            else{
+                $(fromBar).prepend('<h2>新建歌曲<h2/>')
+            }
         },
         reset(){
             this.render({})
@@ -80,6 +87,15 @@
             })
             window.eventHub.on('select',(data)=>{
                 this.model.data =data
+                this.view.render(this.model.data)
+            })
+            window.eventHub.on('new',()=>{
+                this.model.data = {
+                    name:'',
+                    url:'',
+                    id:'',
+                    singer:''
+                }
                 this.view.render(this.model.data)
             })
         },
