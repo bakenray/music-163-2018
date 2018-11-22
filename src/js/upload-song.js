@@ -95,7 +95,7 @@
                            var domain = up.getOption('domain');
                            var response = JSON.parse(info.response);
                            var sourceLink ='http://' +  domain +"/"+ encodeURIComponent(response.key);  
-                        //    uploadStatus.textContent = '文件上传成功 ' +'文件名：' +response.key +  ' 文件链接' +sourceLink
+                           uploadStatus.textContent = '文件上传成功 '
                            window.eventHub.emit('upload',{
                                url:sourceLink,
                                name:response.key
