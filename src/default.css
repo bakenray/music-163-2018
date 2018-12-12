@@ -31,7 +31,10 @@ body{font-size: 14px;line-height: 1.4;}
     padding:20px 0;
 }
 #songList-container{
-    flex-grow:1
+    flex-grow:1;
+    overflow-y: auto;
+    margin-bottom: 40px;
+
 }
 .songList>li{
     padding:12px;

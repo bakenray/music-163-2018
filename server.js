@@ -31,7 +31,7 @@ if(!port){
     var mac = new qiniu.auth.digest.Mac(accessKey, secretKey);
 
     var options = {
-        scope: '163-music-demo-1',
+        scope: '163-music',
       };
       var putPolicy = new qiniu.rs.PutPolicy(options);
       var uploadToken=putPolicy.uploadToken(mac);

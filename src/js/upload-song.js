@@ -31,7 +31,7 @@
                 browse_button: this.view.find('#uploadButton'),
                 uptoken_url: 'http://localhost:8888/uptoken',
                 get_new_uptoken: false,  
-                domain: 'phwydok61.bkt.clouddn.com',     // bucket域名，下载资源时用到，必需
+                domain: 'pjm6pchne.bkt.clouddn.com',     // bucket域名，下载资源时用到，必需
                 container: this.view.find('#uploadContainer'),             // 上传区域DOM ID，默认是browser_button的父元素
                 max_file_size: '100mb',             // 最大文件体积限制
                  //   max_retries: 1,                     // 上传失败最大重试次数
@@ -96,7 +96,7 @@
                            var response = JSON.parse(info.response);
                            var sourceLink ='http://' +  domain +"/"+ encodeURIComponent(response.key);  
                            uploadStatus.textContent = '文件上传成功 '
-                           window.eventHub.emit('upload',{
+                           window.eventHub.emit('new',{
                                url:sourceLink,
                                name:response.key
                            })

@@ -1,7 +1,5 @@
 window.eventHub = {
     events:{
-        // '羊城晚报':[],
-        // '楚天都市报':[]
     },
     // 发布
     emit(eventName,data){
